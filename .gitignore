@@ -1,0 +1,37 @@
+# Gradle / build
+.gradle/
+build/
+out/
+run/
+run-data/
+bin/
+!gradle/wrapper/gradle-wrapper.jar
+
+# IDE
+.idea/
+*.iml
+*.ipr
+*.iws
+.eclipse/
+.settings/
+.classpath
+.project
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Visual pack binaries: fetched by tools/fetch-pack.ps1, not committed
+pack/mods/
+pack/shaderpacks/
+
+# One-off diagnostics
+tools/SpringTest.java
+
+# Runtime dumps
+*.log
+hs_err_pid*.log
+replay_pid*.log
+*.hprof
