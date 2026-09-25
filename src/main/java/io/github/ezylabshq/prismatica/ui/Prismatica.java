@@ -24,7 +24,7 @@ import org.lwjgl.glfw.GLFW;
  * <p>Client side only. No gameplay automation, no network hooks, nothing that
  * would change how the game plays.
  *
- * <p>Copyright (C) 2026 EzyLabs
+ * <p>Copyright (C) 2026 EzyLabsHQ
  *
  * <p>This program is free software: you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the Free
