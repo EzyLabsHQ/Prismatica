@@ -1,4 +1,4 @@
-# Lumina Visual Pack — Minecraft 1.16.5 / Forge 36.2.42
+# Prismatica Visual Pack — Minecraft 1.16.5 / Forge 36.2.42
 
 Client-side only. Interface, performance and cosmetics. Nothing here automates
 gameplay, reads other players' data or gives an advantage in PvP.
@@ -33,7 +33,7 @@ against the SHA1 the API reports. Re-run the script any time to refresh.
 
 1. Install **Forge 1.16.5** (36.2.x) in your launcher.
 2. Copy everything from `pack/mods/` into the version's `mods/` folder.
-3. Copy `lumina-0.1.0.jar` (from `build/libs/`) into the same folder.
+3. Copy `prismatica-0.1.0.jar` (from `build/libs/`) into the same folder.
 4. **OptiFine** is not distributed through Modrinth, download it manually and
    put the jar in `mods/` too (it is what actually renders the shader packs):
    https://www.optifine.net/downloadOptiFine?f=OptiFine_1.16.5_HD_U_G8.jar

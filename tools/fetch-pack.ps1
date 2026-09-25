@@ -47,7 +47,7 @@ function Get-ModrinthVersion {
     $url = 'https://api.modrinth.com/v2/project/{0}/version?loaders=["{1}"]&game_versions=["{2}"]' -f $Slug, $LoaderFilter, $GameVersion
     try {
         $resp = Invoke-RestMethod -Uri $url -UseBasicParsing -TimeoutSec 60 `
-                 -Headers @{ 'User-Agent' = 'lumina-pack/0.1 (local build script)' }
+                 -Headers @{ 'User-Agent' = 'prismatica-pack/0.1 (local build script)' }
     } catch {
         return $null
     }
@@ -95,7 +95,7 @@ $shaders = [ordered]@{
     'bsl-shaders'                = 'visuals: BSL 8, the most used OptiFine shader pack'
     'complementary-reimagined'   = 'visuals: Complementary Reimagined, softer lighting'
 }
-$headers = @{ 'User-Agent' = 'lumina-pack/0.1' }
+$headers = @{ 'User-Agent' = 'prismatica-pack/0.1' }
 foreach ($slug in $shaders.Keys) {
     try {
         $url = 'https://api.modrinth.com/v2/project/{0}/version?game_versions=["{1}"]' -f $slug, $MinecraftVersion
