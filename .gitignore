@@ -27,6 +27,14 @@ desktop.ini
 pack/mods/
 pack/shaderpacks/
 
+# Standalone Forge instance: rebuilt by tools/setup-instance.ps1, 196 MB
+instance/
+
+# Written by the Gradle runClient task, not by the project
+/logs/
+/config/
+/crash-reports/
+
 # One-off diagnostics
 tools/SpringTest.java
 

@@ -1,0 +1,15 @@
+{
+  "required": true,
+  "minVersion": "0.8.4",
+  "package": "io.github.ezylabshq.prismatica.mixin",
+  "compatibilityLevel": "JAVA_8",
+  "mixins": [
+    "MainMenuMixin",
+    "ScreenBackgroundMixin",
+    "ButtonMixin",
+    "ImageButtonMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
