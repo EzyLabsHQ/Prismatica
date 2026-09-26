@@ -25,20 +25,20 @@ public final class ModuleManager {
         initialised = true;
 
         // Interface
-        add(new Module("Rounded Corners", "Soft 9px radius", Category.UI, 0x7C5CFF));
-        add(new Module("Smooth Animations", "Eased transitions", Category.UI, 0x9B6BFF));
-        add(new Module("Scroll Momentum", "Inertial scrolling", Category.UI, 0x5AC8FA));
+        add(new Module("module.rounded", "module.rounded", Category.UI, 0x7C5CFF));
+        add(new Module("module.smooth", "module.smooth", Category.UI, 0x9B6BFF));
+        add(new Module("module.momentum", "module.momentum", Category.UI, 0x5AC8FA));
 
         // Render
-        add(new Module("Accent Border", "1px accent outline", Category.RENDER, 0x2ED3B7));
+        add(new Module("module.border", "module.border", Category.RENDER, 0x2ED3B7));
 
         // HUD
-        add(new Module("Watermark", "Corner info line", Category.HUD, 0xFFB020));
+        add(new Module("module.watermark", "module.watermark", Category.HUD, 0xFFB020));
 
-        set("Rounded Corners", true);
-        set("Smooth Animations", true);
-        set("Scroll Momentum", true);
-        set("Watermark", true);
+        set("module.rounded", true);
+        set("module.smooth", true);
+        set("module.momentum", true);
+        set("module.watermark", true);
     }
 
     private static void add(Module module) {
@@ -77,9 +77,15 @@ public final class ModuleManager {
         }
     }
 
-    private static Module find(String name) {
+    /**
+     * Looked up by translation key, not by the visible name.
+     *
+     * <p>Matching on the name would break the moment the language changed,
+     * since {@code name()} is resolved on read.
+     */
+    private static Module find(String nameKey) {
         for (Module module : MODULES) {
-            if (module.name.equals(name)) {
+            if (module.nameKey.equals(nameKey)) {
                 return module;
             }
         }
