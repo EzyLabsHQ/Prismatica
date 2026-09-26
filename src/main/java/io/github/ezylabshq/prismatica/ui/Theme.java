@@ -62,6 +62,14 @@ public final class Theme {
         targetAccent = newAccent;
         targetPanel = newPanel;
         targetSidebar = newSidebar;
+        // The user facing react speed multiplies whatever the sampler asked for,
+        // so dawn and dusk still travel faster than an idle scene even when the
+        // speed slider is turned down.
+        float user = io.github.ezylabshq.prismatica.config.Settings.floatOf("setting.speed");
+        if (user <= 0f) {
+            user = 1f;
+        }
+        speedScale = speedScale * user;
         // Clamp the speed scale: a spike here would stiffen the spring so much
         // that a channel could ring instead of settling.
         float clamped = speedScale < 1f ? 1f : (speedScale > 1.8f ? 1.8f : speedScale);

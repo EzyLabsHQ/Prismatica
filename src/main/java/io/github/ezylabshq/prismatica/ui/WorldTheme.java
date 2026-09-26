@@ -1,5 +1,6 @@
 package io.github.ezylabshq.prismatica.ui;
 
+import io.github.ezylabshq.prismatica.config.Settings;
 import net.minecraft.client.Minecraft;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.biome.Biome;
@@ -44,6 +45,13 @@ public final class WorldTheme {
 
     /** Sample the world and write a target palette into {@link Theme}. */
     public static void sample(float dt) {
+        // With the reactive theme switched off the world is not read at all and
+        // the palette is derived from the chosen accent instead.
+        if (!Settings.boolOf("setting.reactive")) {
+            applyFixed();
+            return;
+        }
+
         int sky;
         int grass;
         int water;
@@ -84,6 +92,15 @@ public final class WorldTheme {
         // Faster when the world changes quickly (dawn/dusk), slower when idle.
         float speed = 1f + Math.abs(sunHeight - 0.5f) * 1.5f;
         Theme.setTarget(accent, panel, sidebar, speed);
+    }
+
+    /**
+     * Palette used when the reactive theme is off: the chosen accent, with the
+     * same panel and sidebar shading the world driven path applies.
+     */
+    private static void applyFixed() {
+        int accent = Settings.fixedAccent();
+        Theme.setTarget(accent, shade(accent, 0.16f), shade(accent, 0.09f), 1f);
     }
 
     /** 0 at deep night, 1 at noon, smooth through dawn and dusk. */
